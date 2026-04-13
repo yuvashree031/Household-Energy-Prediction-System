@@ -2,8 +2,6 @@
 
 An intelligent web-based application for predicting household energy consumption using machine learning and deep learning models with a structured multi-step workflow. The system allows users to input appliance usage details and weather conditions to get accurate energy consumption predictions using multiple ML models.
 
----
-
 ## Features
 
 - Multi-step guided workflow for easy data input
@@ -13,8 +11,6 @@ An intelligent web-based application for predicting household energy consumption
 - Interactive visualizations and appliance-wise energy breakdown
 - REST API for integration with other systems
 - Comparison of predicted vs calculated energy consumption
-
----
 
 ## Quick Start
 
@@ -50,7 +46,7 @@ python app/app.py
 http://localhost:5000
 ```
 
----
+
 
 ## Workflow
 
