@@ -71,9 +71,6 @@ View the predicted energy consumption along with an appliance-wise breakdown. Re
 ### Dashboard View
 <img src="project%20screenshots/Dashboard.png" width="800"/>
 
-### Graph Visualization
-<img src="project%20screenshots/Graph.png" width="800"/>
-
 ### Step 1 - Appliance Selection
 <img src="project%20screenshots/Step1.png" width="800"/>
 
@@ -85,6 +82,9 @@ View the predicted energy consumption along with an appliance-wise breakdown. Re
 
 ### Step 4 - Prediction Results
 <img src="project%20screenshots/Step4.png" width="800"/>
+
+### Graph Visualization
+<img src="project%20screenshots/Graph.png" width="800"/>
 
 ### Energy Prediction Results
 <img src="project%20screenshots/energy_prediction_results.png" width="800"/>
