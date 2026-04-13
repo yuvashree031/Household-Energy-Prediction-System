@@ -74,29 +74,31 @@ View the predicted energy consumption along with an appliance-wise breakdown. Re
 
 ## Screenshots
 
+## Screenshots
+
 ### Dashboard View
-![Dashboard](./project_screenshots/Dashboard.png)
+<img src="project_screenshots/Dashboard.png" width="800"/>
 
 ### Graph Visualization
-![Graph](./project_screenshots/Graph.png)
+<img src="project_screenshots/Graph.png" width="800"/>
 
 ### Step 1 - Appliance Selection
-![Step1](./project_screenshots/Step1.png)
+<img src="project_screenshots/Step1.png" width="800"/>
 
 ### Step 2 - Weather Inputs
-![Step2](./project_screenshots/Step2.png)
+<img src="project_screenshots/Step2.png" width="800"/>
 
 ### Step 3 - Model Selection
-![Step3](./project_screenshots/Step3.png)
+<img src="project_screenshots/Step3.png" width="800"/>
 
 ### Step 4 - Prediction Results
-![Step4](./project_screenshots/Step4.png)
+<img src="project_screenshots/Step4.png" width="800"/>
 
 ### Energy Prediction Results
-![Energy](./project_screenshots/energy_prediction_results.png)
+<img src="project_screenshots/energy_prediction_results.png" width="800"/>
 
 ### Energy Time Series Comparison
-![TimeSeries](./project_screenshots/energy_timeseries_comparison.png)
+<img src="project_screenshots/energy_timeseries_comparison.png" width="800"/>
 
 ## Appliance Power Ratings
 
