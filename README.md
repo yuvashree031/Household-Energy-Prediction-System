@@ -47,7 +47,6 @@ http://localhost:5000
 ```
 
 
-
 ## Workflow
 
 ### Step 1 - Appliance Selection
@@ -66,7 +65,6 @@ Choose from available prediction models. Each model has different characteristic
 
 View the predicted energy consumption along with an appliance-wise breakdown. Results are displayed with interactive visualizations and compared against the calculated appliance energy total.
 
----
 
 ## Screenshots
 
@@ -105,7 +103,6 @@ View the predicted energy consumption along with an appliance-wise breakdown. Re
 | Fan | 75 | Variable |
 | Lights | 60 | Variable |
 
----
 
 ## Season Classification
 
@@ -115,7 +112,6 @@ View the predicted energy consumption along with an appliance-wise breakdown. Re
 | Moderate | Between 20°C and 30°C |
 | Cold | Less than 20°C |
 
----
 
 ## Machine Learning Models
 
@@ -131,7 +127,6 @@ A sequential ensemble technique that improves prediction performance by correcti
 ### LSTM (Long Short-Term Memory)
 A deep learning model designed for time-series forecasting and sequential data.
 
----
 
 ## Project Structure
 
@@ -146,8 +141,6 @@ Household-energy-prediction/
 ├── README.md
 ```
 
----
-
 ## API Endpoints
 
 | Method | Endpoint | Description |
@@ -157,7 +150,6 @@ Household-energy-prediction/
 | POST | `/api/predict` | Predict energy |
 | GET | `/health` | Health check |
 
----
 
 ## Dependencies
 
@@ -170,8 +162,6 @@ keras
 flask
 ```
 
----
-
 ## Usage
 
 1. Run the application  
@@ -180,7 +170,6 @@ flask
 4. Select model  
 5. View predictions  
 
----
 
 ## Development
 
@@ -189,4 +178,3 @@ cd app
 python app.py
 ```
 
----
