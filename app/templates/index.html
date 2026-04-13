@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Household Energy Consumption Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Household Energy Consumption Predictor</h1>
+            <p class="subtitle">Intelligent Multi-Step Energy Prediction System</p>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-label">Appliances</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">Weather</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Model</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-label">Results</div>
+            </div>
+        </div>
+
+        <div class="step-content active" id="step1">
+            <div class="card">
+                <h2>Step 1: Select Your Appliances</h2>
+                <p class="step-description">Choose which appliances are used in your home and specify hours of usage</p>
+                
+                <div class="appliances-grid">
+                    <div class="appliance-card">
+                        <div class="appliance-icon">AC</div>
+                        <h3>Air Conditioner</h3>
+                        <p class="power-rating">1500W</p>
+                        <label>Hours per day:</label>
+                        <input type="number" id="ac_hours" min="0" max="24" value="0" step="0.5">
+                    </div>
+
+                    <div class="appliance-card">
+                        <div class="appliance-icon">FAN</div>
+                        <h3>Fan</h3>
+                        <p class="power-rating">75W</p>
+                        <label>Hours per day:</label>
+                        <input type="number" id="fan_hours" min="0" max="24" value="0" step="0.5">
+                    </div>
+
+                    <div class="appliance-card">
+                        <div class="appliance-icon">LIGHT</div>
+                        <h3>Lights</h3>
+                        <p class="power-rating">60W</p>
+                        <label>Hours per day:</label>
+                        <input type="number" id="lights_hours" min="0" max="24" value="0" step="0.5">
+                    </div>
+
+                    <div class="appliance-card">
+                        <div class="appliance-icon">FRIDGE</div>
+                        <h3>Refrigerator</h3>
+                        <p class="power-rating">150W</p>
+                        <label>Always On (24h)</label>
+                        <input type="checkbox" id="refrigerator_check" class="appliance-checkbox">
+                    </div>
+
+                    <div class="appliance-card">
+                        <div class="appliance-icon">TV</div>
+                        <h3>Television</h3>
+                        <p class="power-rating">120W</p>
+                        <label>Hours per day:</label>
+                        <input type="number" id="television_hours" min="0" max="24" value="0" step="0.5">
+                    </div>
+
+                    <div class="appliance-card">
+                        <div class="appliance-icon">WASH</div>
+                        <h3>Washing Machine</h3>
+                        <p class="power-rating">500W</p>
+                        <label>Hours per day:</label>
+                        <input type="number" id="washing_machine_hours" min="0" max="24" value="0" step="0.5">
+                    </div>
+                </div>
+
+                <div class="energy-summary">
+                    <h3>Estimated Daily Energy from Appliances</h3>
+                    <div class="energy-value">
+                        <span id="appliance_energy">0.00</span> kWh
+                    </div>
+                </div>
+
+                <button class="btn-next" onclick="goToStep(2)">Next: Weather Inputs →</button>
+            </div>
+        </div>
+
+        <div class="step-content" id="step2">
+            <div class="card">
+                <h2>Step 2: Enter Weather Conditions</h2>
+                <p class="step-description">Provide current weather readings for accurate prediction</p>
+                
+                <div class="weather-grid">
+                    <div class="form-group">
+                        <label>
+                            <span class="icon">TEMP</span>
+                            Average Temperature (°C)
+                        </label>
+                        <input type="number" id="avg_temp" step="0.1" value="25" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <span class="icon">HUM</span>
+                            Relative Humidity (%)
+                        </label>
+                        <input type="number" id="avg_rel_humidity" step="0.1" min="0" max="100" value="60" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <span class="icon">WIND</span>
+                            Average Wind Speed (m/s)
+                        </label>
+                        <input type="number" id="avg_wind_speed" step="0.1" min="0" value="4.0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <span class="icon">INST</span>
+                            Instant Temperature (°C)
+                        </label>
+                        <input type="number" id="inst_temp" step="0.1" value="26" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <span class="icon">RAD</span>
+                            Total Global Radiation (W/m²)
+                        </label>
+                        <input type="number" id="total_global_rad" step="1" min="0" value="500" required>
+                    </div>
+                </div>
+
+                <div class="season-detector">
+                    <h3>Detected Season</h3>
+                    <div class="season-display" id="season_display">
+                        <span class="season-icon">MODERATE</span>
+                        <span class="season-name">Moderate</span>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-back" onclick="goToStep(1)">← Back</button>
+                    <button class="btn-next" onclick="goToStep(3)">Next: Select Model →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-content" id="step3">
+            <div class="card">
+                <h2>Step 3: Choose Prediction Model</h2>
+                <p class="step-description">Select the machine learning model for prediction</p>
+                
+                <div class="model-selection">
+                    <label class="model-card" {% if not rf_available %}style="opacity: 0.6;"{% endif %}>
+                        <input type="radio" name="model_type" value="random_forest_new" checked>
+                        <div class="model-content">
+                            <div class="model-icon">RF</div>
+                            <h3>Random Forest (New)</h3>
+                            <p>Best performing model with 91.84% accuracy</p>
+                            <ul>
+                                <li>✓ R² Score: 0.9184</li>
+                                <li>✓ Lowest error rates</li>
+                                <li>✓ Handles complex patterns</li>
+                            </ul>
+                        </div>
+                    </label>
+
+                    <label class="model-card">
+                        <input type="radio" name="model_type" value="gradient_boosting">
+                        <div class="model-content">
+                            <div class="model-icon">GB</div>
+                            <h3>Gradient Boosting</h3>
+                            <p>Powerful ensemble with 85.00% accuracy</p>
+                            <ul>
+                                <li>✓ R² Score: 0.8500</li>
+                                <li>✓ Excellent for time series</li>
+                                <li>✓ Robust predictions</li>
+                            </ul>
+                        </div>
+                    </label>
+
+                    <label class="model-card">
+                        <input type="radio" name="model_type" value="linear_regression">
+                        <div class="model-content">
+                            <div class="model-icon">LR</div>
+                            <h3>Linear Regression</h3>
+                            <p>Simple baseline model with 61.90% accuracy</p>
+                            <ul>
+                                <li>✓ R² Score: 0.6190</li>
+                                <li>✓ Fast & interpretable</li>
+                                <li>✓ Good for comparison</li>
+                            </ul>
+                        </div>
+                    </label>
+
+                    <label class="model-card" {% if not rf_available %}style="opacity: 0.6;"{% endif %}>
+                        <input type="radio" name="model_type" value="random_forest" {% if not rf_available %}disabled{% endif %}>
+                        <div class="model-content">
+                            <div class="model-icon">RF</div>
+                            <h3>Random Forest (Original)</h3>
+                            <p>Original trained model</p>
+                            <ul>
+                                <li>{% if rf_available %}✓{% else %}✗{% endif %} Model compatibility</li>
+                                <li>✓ Fast predictions</li>
+                                <li>✓ Interpretable results</li>
+                            </ul>
+                        </div>
+                    </label>
+
+                    <label class="model-card" id="lstm-card" {% if not lstm_available %}style="opacity: 0.6;"{% endif %}>
+                        <input type="radio" name="model_type" value="lstm" {% if not lstm_available %}disabled{% endif %}>
+                        <div class="model-content">
+                            <div class="model-icon">NN</div>
+                            <h3>LSTM Neural Network</h3>
+                            <p>Deep learning for sequential patterns</p>
+                            <ul>
+                                <li>{% if lstm_available %}✓{% else %}✗{% endif %} TensorFlow Available</li>
+                                <li>✓ Captures time dependencies</li>
+                                <li>✓ Advanced predictions</li>
+                            </ul>
+                        </div>
+                    </label>
+
+                    <label class="model-card" style="border: 2px solid #f59e0b;" id="fallback-card">
+                        <input type="radio" name="model_type" value="fallback">
+                        <div class="model-content">
+                            <div class="model-icon">FB</div>
+                            <h3>Fallback Model</h3>
+                            <p>Weather-based prediction algorithm</p>
+                            <ul>
+                                <li>✓ Always available</li>
+                                <li>✓ Weather-based calculations</li>
+                                <li>✓ Reasonable estimates</li>
+                            </ul>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-back" onclick="goToStep(2)">← Back</button>
+                    <button class="btn-predict" onclick="makePrediction()">Predict Energy Consumption</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="step-content" id="step4">
+            <div class="card">
+                <h2>Step 4: Prediction Results</h2>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Appliance Energy</h3>
+                        <div class="result-value">
+                            <span id="result_appliance_energy">0.00</span>
+                            <span class="unit">kWh</span>
+                        </div>
+                        <p class="result-label">From selected appliances</p>
+                    </div>
+
+                    <div class="result-card">
+                        <h3 id="result_season_icon">SEASON</h3>
+                        <div class="result-value">
+                            <span id="result_season">Moderate</span>
+                        </div>
+                        <p class="result-label">Detected season</p>
+                    </div>
+
+                    <div class="result-card highlight">
+                        <h3>Predicted Consumption</h3>
+                        <div class="result-value large">
+                            <span id="result_prediction">0.00</span>
+                            <span class="unit">kWh</span>
+                        </div>
+                        <p class="result-label">Model: <span id="result_model">-</span></p>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="energyChart"></canvas>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-back" onclick="goToStep(3)">← Back</button>
+                    <button class="btn-restart" onclick="restartPrediction()">New Prediction</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with Flask, TensorFlow, and Scikit-learn | Intelligent Energy Prediction System</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
