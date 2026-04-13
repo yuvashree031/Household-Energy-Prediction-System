@@ -74,31 +74,29 @@ View the predicted energy consumption along with an appliance-wise breakdown. Re
 
 ## Screenshots
 
-## Screenshots
-
 ### Dashboard View
-<img src="project_screenshots/Dashboard.png" width="800"/>
+<img src="https://raw.githubusercontent.com/yuvashree031/Household-Energy-Prediction-System/main/project_screenshots/Dashboard.png" width="800"/>
 
 ### Graph Visualization
-<img src="project_screenshots/Graph.png" width="800"/>
+<img src="https://raw.githubusercontent.com/yuvashree031/Household-Energy-Prediction-System/main/project_screenshots/Graph.png" width="800"/>
 
 ### Step 1 - Appliance Selection
-<img src="project_screenshots/Step1.png" width="800"/>
+<img src="https://raw.githubusercontent.com/yuvashree031/Household-Energy-Prediction-System/main/project_screenshots/Step1.png" width="800"/>
 
 ### Step 2 - Weather Inputs
-<img src="project_screenshots/Step2.png" width="800"/>
+<img src="https://raw.githubusercontent.com/yuvashree031/Household-Energy-Prediction-System/main/project_screenshots/Step2.png" width="800"/>
 
 ### Step 3 - Model Selection
-<img src="project_screenshots/Step3.png" width="800"/>
+<img src="https://raw.githubusercontent.com/yuvashree031/Household-Energy-Prediction-System/main/project_screenshots/Step3.png" width="800"/>
 
 ### Step 4 - Prediction Results
-<img src="project_screenshots/Step4.png" width="800"/>
+<img src="https://raw.githubusercontent.com/yuvashree031/Household-Energy-Prediction-System/main/project_screenshots/Step4.png" width="800"/>
 
 ### Energy Prediction Results
-<img src="project_screenshots/energy_prediction_results.png" width="800"/>
+<img src="https://raw.githubusercontent.com/yuvashree031/Household-Energy-Prediction-System/main/project_screenshots/energy_prediction_results.png" width="800"/>
 
 ### Energy Time Series Comparison
-<img src="project_screenshots/energy_timeseries_comparison.png" width="800"/>
+<img src="https://raw.githubusercontent.com/yuvashree031/Household-Energy-Prediction-System/main/project_screenshots/energy_timeseries_comparison.png" width="800"/>
 
 ## Appliance Power Ratings
 
