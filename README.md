@@ -74,55 +74,29 @@ View the predicted energy consumption along with an appliance-wise breakdown. Re
 
 ## Screenshots
 
-<p align="center">
-  <img src="project_screenshots/Dashboard.png" width="700"/>
-</p>
+### Dashboard View
+![Dashboard](./project_screenshots/Dashboard.png)
 
-<p align="center"><b>Dashboard View</b></p>
+### Graph Visualization
+![Graph](./project_screenshots/Graph.png)
 
-<p align="center">
-  <img src="project_screenshots/Graph.png" width="700"/>
-</p>
+### Step 1 - Appliance Selection
+![Step1](./project_screenshots/Step1.png)
 
-<p align="center"><b>Graph Visualization</b></p>
+### Step 2 - Weather Inputs
+![Step2](./project_screenshots/Step2.png)
 
-<p align="center">
-  <img src="project_screenshots/Step1.png" width="700"/>
-</p>
+### Step 3 - Model Selection
+![Step3](./project_screenshots/Step3.png)
 
-<p align="center"><b>Step 1 - Appliance Selection</b></p>
+### Step 4 - Prediction Results
+![Step4](./project_screenshots/Step4.png)
 
-<p align="center">
-  <img src="project_screenshots/Step2.png" width="700"/>
-</p>
+### Energy Prediction Results
+![Energy](./project_screenshots/energy_prediction_results.png)
 
-<p align="center"><b>Step 2 - Weather Inputs</b></p>
-
-<p align="center">
-  <img src="project_screenshots/Step3.png" width="700"/>
-</p>
-
-<p align="center"><b>Step 3 - Model Selection</b></p>
-
-<p align="center">
-  <img src="project_screenshots/Step4.png" width="700"/>
-</p>
-
-<p align="center"><b>Step 4 - Prediction Results</b></p>
-
-<p align="center">
-  <img src="project_screenshots/energy_prediction_results.png" width="700"/>
-</p>
-
-<p align="center"><b>Energy Prediction Results</b></p>
-
-<p align="center">
-  <img src="project_screenshots/energy_timeseries_comparison.png" width="700"/>
-</p>
-
-<p align="center"><b>Energy Time Series Comparison</b></p>
-
----
+### Energy Time Series Comparison
+![TimeSeries](./project_screenshots/energy_timeseries_comparison.png)
 
 ## Appliance Power Ratings
 
