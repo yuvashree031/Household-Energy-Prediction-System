@@ -72,6 +72,58 @@ View the predicted energy consumption along with an appliance-wise breakdown. Re
 
 ---
 
+## Screenshots
+
+<p align="center">
+  <img src="project_screenshots/Dashboard.png" width="700"/>
+</p>
+
+<p align="center"><b>Dashboard View</b></p>
+
+<p align="center">
+  <img src="project_screenshots/Graph.png" width="700"/>
+</p>
+
+<p align="center"><b>Graph Visualization</b></p>
+
+<p align="center">
+  <img src="project_screenshots/Step1.png" width="700"/>
+</p>
+
+<p align="center"><b>Step 1 - Appliance Selection</b></p>
+
+<p align="center">
+  <img src="project_screenshots/Step2.png" width="700"/>
+</p>
+
+<p align="center"><b>Step 2 - Weather Inputs</b></p>
+
+<p align="center">
+  <img src="project_screenshots/Step3.png" width="700"/>
+</p>
+
+<p align="center"><b>Step 3 - Model Selection</b></p>
+
+<p align="center">
+  <img src="project_screenshots/Step4.png" width="700"/>
+</p>
+
+<p align="center"><b>Step 4 - Prediction Results</b></p>
+
+<p align="center">
+  <img src="project_screenshots/energy_prediction_results.png" width="700"/>
+</p>
+
+<p align="center"><b>Energy Prediction Results</b></p>
+
+<p align="center">
+  <img src="project_screenshots/energy_timeseries_comparison.png" width="700"/>
+</p>
+
+<p align="center"><b>Energy Time Series Comparison</b></p>
+
+---
+
 ## Appliance Power Ratings
 
 | Appliance | Power (W) | Usage Type |
@@ -98,20 +150,16 @@ View the predicted energy consumption along with an appliance-wise breakdown. Re
 ## Machine Learning Models
 
 ### Linear Regression
-
-A simple and interpretable baseline model that establishes a linear relationship between input features and energy consumption. Best suited for understanding feature importance and quick predictions.
+A simple and interpretable baseline model that establishes a linear relationship between input features and energy consumption.
 
 ### Random Forest
-
-An ensemble learning method that builds multiple decision trees and merges their results. It handles non-linear relationships effectively and provides stable, accurate predictions with resistance to overfitting.
+An ensemble learning method that builds multiple decision trees and merges their results for better accuracy.
 
 ### Gradient Boosting
-
-A sequential ensemble technique that builds trees one at a time, where each new tree corrects errors made by the previous ones. It delivers high prediction accuracy and performs well on structured data.
+A sequential ensemble technique that improves prediction performance by correcting previous errors.
 
 ### LSTM (Long Short-Term Memory)
-
-A deep learning model designed for sequential and time-series data. It captures temporal dependencies in energy consumption patterns and is suitable for advanced forecasting scenarios.
+A deep learning model designed for time-series forecasting and sequential data.
 
 ---
 
@@ -121,31 +169,11 @@ A deep learning model designed for sequential and time-series data. It captures 
 Household-energy-prediction/
 |
 ├── app/
-│   ├── app.py
-│   ├── requirements.txt
-│   ├── templates/
-│   │   ├── index.html
-│   │   └── index_realtime.html
-│   └── static/
-│       ├── style.css
-│       ├── script.js
-│       ├── style_realtime.css
-│       └── script_realtime.js
-|
 ├── models/
-│   ├── random_forest_energy_model.pkl
-│   └── lstm_energy_model.h5
-|
 ├── data/
-│   ├── energy_data.csv
-│   └── weather_data.csv
-|
 ├── notebooks/
-│   └── model_training.ipynb
-|
-├── install.bat
-├── run.bat
-└── README.md
+├── project_screenshots/
+├── README.md
 ```
 
 ---
@@ -154,79 +182,41 @@ Household-energy-prediction/
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/calculate-appliance-energy` | Calculate energy based on appliance usage |
-| POST | `/api/detect-season` | Detect season from temperature input |
-| POST | `/api/predict` | Predict total energy consumption |
-| GET | `/health` | Application health check |
+| POST | `/api/calculate-appliance-energy` | Calculate energy |
+| POST | `/api/detect-season` | Detect season |
+| POST | `/api/predict` | Predict energy |
+| GET | `/health` | Health check |
 
 ---
 
 ## Dependencies
 
 ```
-pandas==2.0.3
-numpy==1.24.3
-scikit-learn==1.3.0
-tensorflow==2.13.0
-keras==2.13.1
-protobuf==3.20.3
-joblib==1.3.2
-flask==2.3.3
-werkzeug==2.3.7
-h5py==3.9.0
-```
-
----
-
-## Customization
-
-### Modify Appliance Power Ratings
-
-Edit the `APPLIANCE_POWER` dictionary in `app/app.py` to update wattage values or add new appliances:
-
-```python
-APPLIANCE_POWER = {
-    'ac': 1500,
-    'fan': 75,
-    'lights': 60,
-    'refrigerator': 150,
-    'television': 120,
-    'washing_machine': 500
-}
-```
-
-### Modify Season Logic
-
-Update the temperature thresholds in `app/app.py` to adjust season boundaries:
-
-```python
-if temp > 30:
-    season = 'Hot'
-elif temp >= 20:
-    season = 'Moderate'
-else:
-    season = 'Cold'
+pandas
+numpy
+scikit-learn
+tensorflow
+keras
+flask
 ```
 
 ---
 
 ## Usage
 
-1. Launch the application and open it in your browser
-2. Select the appliances used in your household and enter their daily usage hours
-3. Enter the current weather conditions for your location
-4. Select the machine learning model you want to use for prediction
-5. View the predicted energy consumption, breakdown chart, and comparison with calculated values
+1. Run the application  
+2. Enter appliance usage  
+3. Provide weather inputs  
+4. Select model  
+5. View predictions  
 
 ---
 
 ## Development
-
-To run the application in development mode with debug enabled:
 
 ```bash
 cd app
 python app.py
 ```
 
-The application will reload automatically on code changes when running in development mode.
+---
