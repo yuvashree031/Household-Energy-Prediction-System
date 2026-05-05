@@ -6,7 +6,7 @@ from energy_prediction_models import EnergyPredictionModels
 
 def create_visualizations():
     plt.style.use('seaborn-v0_8')
-    sns.set_palette("husl")
+    sns.set_palette("husl") #hus1 
     
     energy_models = EnergyPredictionModels("data/loureiro_energy.csv")
     energy_models.run_complete_pipeline()
