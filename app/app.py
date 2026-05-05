@@ -33,7 +33,7 @@ try:
     import os
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
     
-    import tensorflow as tf # type: ignore
+    import tensorflow as tf # type: ignore this
     
     lstm_model = tf.keras.models.load_model(os.path.join(MODEL_DIR, 'lstm_energy_model.h5'))
     lstm_available = True
