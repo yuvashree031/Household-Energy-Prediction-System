@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify # type: ignore
+from flask import Flask, render_template, request, jsonify 
 import numpy as np
 import pandas as pd
 import joblib
