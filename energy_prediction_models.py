@@ -1,4 +1,3 @@
-#import
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -12,7 +11,7 @@ warnings.filterwarnings('ignore')
 try:
     import os
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-    import tensorflow as tf # type: ignore
+    import tensorflow as tf 
     from tensorflow.keras.models import Sequential # type: ignore
     from tensorflow.keras.layers import LSTM, Dense, Dropout # type: ignore
     TENSORFLOW_AVAILABLE = True
