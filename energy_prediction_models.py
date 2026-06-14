@@ -18,7 +18,6 @@ try:
 except:
     TENSORFLOW_AVAILABLE = False
 
-# For demonstration purposes, let's simulate LSTM results
 SIMULATE_LSTM = True
 
 class EnergyPredictionModels:
