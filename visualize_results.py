@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 from energy_prediction_models import EnergyPredictionModels
 
-#import
 def create_visualizations():
     plt.style.use('seaborn-v0_8')
     sns.set_palette("husl") #hus1 
