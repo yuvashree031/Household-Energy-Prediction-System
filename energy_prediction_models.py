@@ -8,6 +8,8 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 import warnings
 warnings.filterwarnings('ignore')
 
+#jdafjsdsdgdsgds
+
 try:
     import os
     os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
