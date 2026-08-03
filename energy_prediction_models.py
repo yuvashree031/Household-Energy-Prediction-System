@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 import warnings
 warnings.filterwarnings('ignore')
 
-#jdafjsdsdg
+#jdafj
 
 try:
     import os
